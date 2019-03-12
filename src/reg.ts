@@ -6,6 +6,15 @@
 // <input id="password" class="sortThis" type="text" placeholder="Enter Password" value="Enter Password">
 // <input id="confPassword" class="sortThis" type="text" placeholder="Confirm Password" value="Confirm password">
 
+class registar2 {
+    userName: string;
+    password: string;
+    constructor(name: string, pass: string) {
+        this.userName = name;
+        this.password = pass;
+    }
+}
+
 
 document.getElementById("regButton").addEventListener("click", function () {
     let userNameSent = ((<HTMLInputElement>document.getElementById("username")).value);
@@ -13,7 +22,7 @@ document.getElementById("regButton").addEventListener("click", function () {
     let userPassConfirmed = ((<HTMLInputElement>document.getElementById("confPassword")).value);
 
     console.log("this is the value sent by the app");
-    console.log(userNameSent + " / " +  userPassSent + " / " +userPassConfirmed);
+    console.log(userNameSent + " / " + userPassSent + " / " + userPassConfirmed);
 
     let i = 0,
         oJson = {},
@@ -28,10 +37,28 @@ document.getElementById("regButton").addEventListener("click", function () {
             console.log(y + " " + "this if from the second condition");
         }
 
-        // if (x == ) {
+        // ovaj uslov proverava da li korisnik vec postoji ako postoji kraj programa break
+        if (x == userNameSent && y == userPassSent && y == userPassConfirmed) {
+            console.log("Podaci koje zelite da unesete vec postoje: pokusajte ponovo");
+            break;
+        } else {
+            let x1 = userNameSent;
+            let x2 = userPassSent;
+            let x3 = userPassConfirmed;
 
-        // }
+            if (x2 == x3) {
+                let userName = x1;
+                localStorage.setItem(userName, userName);
 
+                let userPass = x2;
+                localStorage.setItem(userPass, userPass);
+            }else{
+                ((<HTMLInputElement>document.getElementById("password")).style.backgroundColor = "red");
+                ((<HTMLInputElement>document.getElementById("password")).value = "sifre se ne poklapa pokusaj ponovo");
+                ((<HTMLInputElement>document.getElementById("confPassword")).style.backgroundColor = "red");
+                ((<HTMLInputElement>document.getElementById("password")).value = "sifre se ne poklapa pokusaj ponovo");
+            }
+        }
     }
 });
 
