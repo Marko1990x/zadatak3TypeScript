@@ -18,6 +18,7 @@ document.getElementById("regButton").addEventListener("click", function () {
     console.log("this is the value sent by the app");
     console.log(userNameSent + " / " + userPassSent + " / " + userPassConfirmed);
     var i = 0, oJson = {}, sKey;
+    var check = 0;
     for (; sKey = window.localStorage.key(i); i++) {
         //oJson[sKey] = window.localStorage.getItem(sKey);
         if (i % 2 == 0) { // even values for i
@@ -42,14 +43,24 @@ document.getElementById("regButton").addEventListener("click", function () {
                 localStorage.setItem(userName_1, userName_1);
                 var userPass_1 = x2;
                 localStorage.setItem(userPass_1, userPass_1);
+                // stavljam redirect ovde da me vrati na login stranu.
+                // ah .... 30 minuta sam proveo dok nisam shvatio da forma sa action mi pravi problem
+                // sa location.relapce ...........
+                check = 100;
             }
             else {
                 (document.getElementById("password").style.backgroundColor = "red");
                 (document.getElementById("password").value = "sifre se ne poklapa pokusaj ponovo");
                 (document.getElementById("confPassword").style.backgroundColor = "red");
-                (document.getElementById("password").value = "sifre se ne poklapa pokusaj ponovo");
+                (document.getElementById("confPassword").value = "sifre se ne poklapa pokusaj ponovo");
+            }
+            if (check == 100) {
+                alert("Uspesno ste se registrovali, bicete vraceni na login stranu");
+                location.replace("../index.html");
+                break;
             }
         }
     }
 });
+// change the look of the confirm box in this part
 //console.log(oJson);
