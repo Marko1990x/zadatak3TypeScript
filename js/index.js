@@ -50,8 +50,8 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log(userNameSent + " " + userPassSent);
     var x1 = [user1, user2, user3], string;
     //console.log(x1);
-    for (var i_1 = 0; i_1 < x1.length; i_1++) {
-        var element = x1[i_1];
+    for (var i = 0; i < x1.length; i++) {
+        var element = x1[i];
         console.log("sent by for loop");
         console.log(element);
         // let x: boolean = false;
