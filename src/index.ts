@@ -67,19 +67,34 @@ document.getElementById("loginButton").addEventListener("click", function () {
     let userPassSent = ((<HTMLInputElement>document.getElementById("enterPassword")).value);
     console.log(userPassSent + " this is the userpass sent by the app");
 
-    console.log("ok");
+    //console.log("ok");
     console.log(userNameSent + " " + userPassSent);
 
+    let x1 = [user1, user2, user3], string;
+    //console.log(x1);
 
-    if(userName === userNameSent && userPass == userPassSent){
-        console.log("ok it works");
+    for (let i = 0; i < x1.length; i++) {
+        const element = x1[i];
+        console.log("sent by for loop")
+        console.log(element);
+        if (element.userName == userNameSent && element.password == userPassSent) {
+            console.log("check is ok")
+        } else {
+            console.log("check is bad or itteration stopped after finding a match")
+            break;
+        }
+        
     }
-    if(userName2 === userNameSent && userPass2 == userPassSent){
-        console.log("ok it works 2");
-    }
-    if(userName3 === userNameSent && userPass3 == userPassSent){
-        console.log("ok it works 3");
-    }
+
+    // if(userName === userNameSent && userPass == userPassSent){
+    //     console.log("ok it works first set of values");
+    // }
+    // if(userName2 === userNameSent && userPass2 == userPassSent){
+    //     console.log("ok it works first set of values");
+    // }
+    // if(userName3 === userNameSent && userPass3 == userPassSent){
+    //     console.log("ok it works 3");
+    // }
 
     
 });
