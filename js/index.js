@@ -6,17 +6,17 @@ var registar = /** @class */ (function () {
     }
     return registar;
 }());
-var userName = 'Marko1';
+var userName = 'Marko';
 localStorage.setItem(userName, userName);
-var userPass = 'Marko2';
+var userPass = 'MarkoPass';
 localStorage.setItem(userPass, userPass);
-var userName2 = 'Nikola 1';
+var userName2 = 'Nikola';
 localStorage.setItem(userName2, userName2);
-var userPass2 = 'Nikola9000';
+var userPass2 = 'NikolaPass';
 localStorage.setItem(userPass2, userPass2);
-var userName3 = 'Damjan 1';
+var userName3 = 'Damjan';
 localStorage.setItem(userName3, userName3);
-var userPass3 = 'Damjan9000';
+var userPass3 = 'DamjanPass';
 localStorage.setItem(userPass3, userPass3);
 var myItem = localStorage.getItem(userName);
 var user1 = new registar(userName, userPass);
@@ -46,5 +46,8 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log(userPassSent + " this is the userpass sent by the app");
     console.log("ok");
     console.log(userNameSent + " " + userPassSent);
+    if (userName === userNameSent && userPass == userPassSent) {
+        console.log("ok it works");
+    }
 });
 console.log(user1, user2, user3);

@@ -10,22 +10,22 @@ class registar {
     }
 }
 
-let userName = 'Marko1';
+let userName = 'Marko';
 localStorage.setItem(userName, userName);
 
-let userPass = 'Marko2';
+let userPass = 'MarkoPass';
 localStorage.setItem(userPass, userPass);
 
-let userName2 = 'Nikola 1';
+let userName2 = 'Nikola';
 localStorage.setItem(userName2, userName2);
 
-let userPass2 = 'Nikola9000';
+let userPass2 = 'NikolaPass';
 localStorage.setItem(userPass2, userPass2);
 
-let userName3 = 'Damjan 1';
+let userName3 = 'Damjan';
 localStorage.setItem(userName3, userName3);
 
-let userPass3 = 'Damjan9000';
+let userPass3 = 'DamjanPass';
 localStorage.setItem(userPass3, userPass3);
 
 let myItem = localStorage.getItem(userName);
@@ -69,6 +69,18 @@ document.getElementById("loginButton").addEventListener("click", function () {
 
     console.log("ok");
     console.log(userNameSent + " " + userPassSent);
+
+
+    if(userName === userNameSent && userPass == userPassSent){
+        console.log("ok it works");
+    }
+    if(userName2 === userNameSent && userPass2 == userPassSent){
+        console.log("ok it works 2");
+    }
+    if(userName3 === userNameSent && userPass3 == userPassSent){
+        console.log("ok it works 3");
+    }
+
     
 });
 
