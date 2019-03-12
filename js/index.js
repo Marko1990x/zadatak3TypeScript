@@ -22,23 +22,29 @@ var myItem = localStorage.getItem(userName);
 var user1 = new registar(userName, userPass);
 var user2 = new registar(userName2, userPass2);
 var user3 = new registar(userName3, userPass3);
-var userNameSent = (document.getElementById("enterUsername").value);
-console.log(userNameSent + " this is the username sent by the app ");
-var userPassSent = (document.getElementById("enterPassword").value);
-console.log(userPassSent + " this is the userpass sent by the app");
-function check(name, pass) {
-    console.log(name + " check " + pass + " these are the values sent by the button");
-    if (userName === name) {
-        console.log("ok");
-    }
-    if (userPass === pass) {
-        console.log("ok 2");
-    }
-    return console.log(name + pass);
-}
-function start() {
-    var param1 = userNameSent;
-    var param2 = userPassSent;
-    document.getElementById("loginButton").addEventListener("click", check(param1, param2));
-}
+//#region 
+// function start() {
+//     let param1 = userNameSent;
+//     let param2 = userPassSent;
+//     (<HTMLInputElement>document.getElementById("loginButton")).addEventListener("click", check(param1,param2));
+// }
+// function check(name: string, pass: string) {
+//     console.log(name + " check " + pass + " these are the values sent by the button")
+//     if (userName === name) {
+//         console.log("ok")
+//     }
+//     if (userPass === pass) {
+//         console.log("ok 2")
+//     }
+//     return console.log(name + pass)
+// }
+//#endregion
+document.getElementById("loginButton").addEventListener("click", function () {
+    var userNameSent = (document.getElementById("enterUsername").value);
+    console.log(userNameSent + " this is the username sent by the app ");
+    var userPassSent = (document.getElementById("enterPassword").value);
+    console.log(userPassSent + " this is the userpass sent by the app");
+    console.log("ok");
+    console.log(userNameSent + " " + userPassSent);
+});
 console.log(user1, user2, user3);

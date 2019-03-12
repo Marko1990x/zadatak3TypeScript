@@ -34,32 +34,44 @@ var user1 = new registar(userName, userPass);
 var user2 = new registar(userName2, userPass2);
 var user3 = new registar(userName3, userPass3);
 
-let userNameSent = ((<HTMLInputElement>document.getElementById("enterUsername")).value);
-console.log(userNameSent + " this is the username sent by the app ");
 
-let userPassSent = ((<HTMLInputElement>document.getElementById("enterPassword")).value);
-console.log(userPassSent + " this is the userpass sent by the app");
 
-function check(name: string, pass: string) {
 
-    console.log(name + " check " + pass + " these are the values sent by the button")
+//#region 
+// function start() {
+//     let param1 = userNameSent;
+//     let param2 = userPassSent;
+//     (<HTMLInputElement>document.getElementById("loginButton")).addEventListener("click", check(param1,param2));
+// }
 
-    if (userName === name) {
-        console.log("ok")
-    }
+// function check(name: string, pass: string) {
 
-    if (userPass === pass) {
-        console.log("ok 2")
-    }
+//     console.log(name + " check " + pass + " these are the values sent by the button")
 
-    return console.log(name + pass)
-}
+//     if (userName === name) {
+//         console.log("ok")
+//     }
 
-function start() {
-    let param1 = userNameSent;
-    let param2 = userPassSent;
-    (<HTMLInputElement>document.getElementById("loginButton")).addEventListener("click", check(param1,param2));
-}
+//     if (userPass === pass) {
+//         console.log("ok 2")
+//     }
+
+//     return console.log(name + pass)
+// }
+//#endregion
+
+document.getElementById("loginButton").addEventListener("click", function () {
+    let userNameSent = ((<HTMLInputElement>document.getElementById("enterUsername")).value);
+    console.log(userNameSent + " this is the username sent by the app ");
+
+    let userPassSent = ((<HTMLInputElement>document.getElementById("enterPassword")).value);
+    console.log(userPassSent + " this is the userpass sent by the app");
+
+    console.log("ok");
+    console.log(userNameSent + " " + userPassSent);
+    
+});
+
 
 
 console.log(user1, user2, user3);
