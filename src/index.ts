@@ -35,7 +35,9 @@ var user2 = new registar(userName2, userPass2);
 var user3 = new registar(userName3, userPass3);
 
 
-
+function bullShitticusMaximus (param: any){
+    
+}
 
 //#region 
 // function start() {
@@ -67,23 +69,46 @@ document.getElementById("loginButton").addEventListener("click", function () {
     let userPassSent = ((<HTMLInputElement>document.getElementById("enterPassword")).value);
     console.log(userPassSent + " this is the userpass sent by the app");
 
-    console.log("ok");
+    //console.log("ok");
     console.log(userNameSent + " " + userPassSent);
 
+    let x1 = [user1, user2, user3], string;
+    //console.log(x1);
 
-    if(userName === userNameSent && userPass == userPassSent){
-        console.log("ok it works");
+    for (let i = 0; i < x1.length; i++) {
+        const element = x1[i];
+        console.log("sent by for loop")
+        console.log(element);
+        // let x: boolean = false;
+        let x: number = -1;
+        if (element.userName == userNameSent && element.password == userPassSent) {
+            // x = true;
+            // console.log(x + " this is the boolean value");
+            x = 1;
+            console.log("check is ok opening new page")
+            location.replace("../additionalAnnoyance/login.html")
+            // document.getElementById("loginButton").removeEventListener("click", function(){
+                // try and fix this part
+            // });
+
+        }
+        else if(x < 0){
+            console.log("nije pronadjen objekat u ovoj iteraciji");
+        }
     }
-    if(userName2 === userNameSent && userPass2 == userPassSent){
-        console.log("ok it works 2");
-    }
-    if(userName3 === userNameSent && userPass3 == userPassSent){
-        console.log("ok it works 3");
-    }
+
+    // if(userName === userNameSent && userPass == userPassSent){
+    //     console.log("ok it works first set of values");
+    // }
+    // if(userName2 === userNameSent && userPass2 == userPassSent){
+    //     console.log("ok it works first set of values");
+    // }
+    // if(userName3 === userNameSent && userPass3 == userPassSent){
+    //     console.log("ok it works 3");
+    // }
 
     
 });
-
 
 
 console.log(user1, user2, user3);
