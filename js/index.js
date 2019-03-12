@@ -18,10 +18,26 @@ var userName3 = 'Damjan';
 localStorage.setItem(userName3, userName3);
 var userPass3 = 'DamjanPass';
 localStorage.setItem(userPass3, userPass3);
-var myItem = localStorage.getItem(userName);
-var user1 = new registar(userName, userPass);
-var user2 = new registar(userName2, userPass2);
-var user3 = new registar(userName3, userPass3);
+// part of the old code no longer needed
+// let user1 = new registar(userName, userPass);
+// let user2 = new registar(userName2, userPass2);
+// let user3 = new registar(userName3, userPass3);
+var i = 0, oJson = {}, sKey;
+var check = 0;
+for (; sKey = window.localStorage.key(i); i++) {
+    if (i % 2 == 0) { // even values for i
+        var x = window.localStorage.getItem(sKey); // how to get every second value
+        //console.log(x + " " + "this is from the first condition");
+    }
+    else {
+        var y = window.localStorage.getItem(sKey);
+        //console.log(y + " " + "this if from the second condition");
+    }
+    var userX = new registar(x, y);
+    console.log(userX);
+}
+console.log("pick one of the objects from console to login");
+console.log("or enter nonsence and make your own");
 //let bullShitticusMaximus = [user1, user2, user3];
 //export default bullShitticusMaximus;
 //#region 
@@ -48,28 +64,50 @@ document.getElementById("loginButton").addEventListener("click", function () {
     console.log(userPassSent + " this is the userpass sent by the app");
     //console.log("ok");
     console.log(userNameSent + " " + userPassSent);
-    var x1 = [user1, user2, user3], string;
-    //console.log(x1);
-    for (var i = 0; i < x1.length; i++) {
-        var element = x1[i];
-        console.log("sent by for loop");
-        console.log(element);
-        // let x: boolean = false;
-        var x = -1;
-        if (element.userName == userNameSent && element.password == userPassSent) {
-            // x = true;
-            // console.log(x + " this is the boolean value");
-            x = 1;
-            console.log("check is ok opening new page");
-            location.replace("../additionalAnnoyance/login.html");
-            // document.getElementById("loginButton").removeEventListener("click", function(){
-            // try and fix this part
-            // });
+    var i = 0, oJson = {}, sKey;
+    var check = 0;
+    var xCheck = 100;
+    for (; sKey = window.localStorage.key(i); i++) {
+        if (i % 2 == 0) { // even values for i
+            var x = window.localStorage.getItem(sKey); // how to get every second value
+            //console.log(x + " " + "this is from the first condition");
         }
-        else if (x < 0) {
-            console.log("nije pronadjen objekat u ovoj iteraciji");
+        else {
+            var y = window.localStorage.getItem(sKey);
+            //console.log(y + " " + "this if from the second condition");
+        }
+        if (x == userNameSent && y == userPassSent) {
+            console.log("excelente it works");
+            xCheck = -100;
+            // this works great add the page for sucessufull login now
         }
     }
+    if (xCheck > 0) {
+        alert("Korisnicko ime nije pronadjeno u local storage da li zelite da se registrujete");
+    }
+    //#region 
+    // let x1 = [user1, user2, user3], string;
+    //console.log(x1);
+    // for (let i = 0; i < x1.length; i++) {
+    //     const element = x1[i];
+    //     console.log("sent by for loop")
+    //     console.log(element);
+    // let x: boolean = false;
+    // let x: number = -1;
+    // if (element.userName == userNameSent && element.password == userPassSent) {
+    // x = true;
+    // console.log(x + " this is the boolean value");
+    // x = 1;
+    // console.log("check is ok opening new page")
+    // location.replace("../additionalAnnoyance/login.html")
+    // document.getElementById("loginButton").removeEventListener("click", function(){
+    // try and fix this part
+    // });
+    //     }
+    //     else if (x < 0) {
+    //         console.log("nije pronadjen objekat u ovoj iteraciji");
+    //     }
+    // }
     // if(userName === userNameSent && userPass == userPassSent){
     //     console.log("ok it works first set of values");
     // }
@@ -79,5 +117,6 @@ document.getElementById("loginButton").addEventListener("click", function () {
     // if(userName3 === userNameSent && userPass3 == userPassSent){
     //     console.log("ok it works 3");
     // }
+    //#endregion
 });
-console.log(user1, user2, user3);
+// console.log(user1, user2, user3);
