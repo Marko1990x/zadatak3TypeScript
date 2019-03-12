@@ -35,7 +35,9 @@ var user2 = new registar(userName2, userPass2);
 var user3 = new registar(userName3, userPass3);
 
 
-
+function bullShitticusMaximus (param: any){
+    
+}
 
 //#region 
 // function start() {
@@ -77,13 +79,22 @@ document.getElementById("loginButton").addEventListener("click", function () {
         const element = x1[i];
         console.log("sent by for loop")
         console.log(element);
+        // let x: boolean = false;
+        let x: number = -1;
         if (element.userName == userNameSent && element.password == userPassSent) {
-            console.log("check is ok")
-        } else {
-            console.log("check is bad or itteration stopped after finding a match")
-            break;
+            // x = true;
+            // console.log(x + " this is the boolean value");
+            x = 1;
+            console.log("check is ok opening new page")
+            location.replace("../additionalAnnoyance/login.html")
+            // document.getElementById("loginButton").removeEventListener("click", function(){
+                // try and fix this part
+            // });
+
         }
-        
+        else if(x < 0){
+            console.log("nije pronadjen objekat u ovoj iteraciji");
+        }
     }
 
     // if(userName === userNameSent && userPass == userPassSent){
@@ -98,7 +109,6 @@ document.getElementById("loginButton").addEventListener("click", function () {
 
     
 });
-
 
 
 console.log(user1, user2, user3);
