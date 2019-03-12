@@ -7,3 +7,10 @@ function backToIndex() {
     });
 }
 backToIndex();
+
+function toRegPage() {
+    document.getElementById("okLoginButton").addEventListener("click", function () {
+        location.replace("./registrationForm.html")
+    });
+}
+toRegPage();
