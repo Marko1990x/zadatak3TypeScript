@@ -49,5 +49,11 @@ document.getElementById("loginButton").addEventListener("click", function () {
     if (userName === userNameSent && userPass == userPassSent) {
         console.log("ok it works");
     }
+    if (userName2 === userNameSent && userPass2 == userPassSent) {
+        console.log("ok it works 2");
+    }
+    if (userName3 === userNameSent && userPass3 == userPassSent) {
+        console.log("ok it works 3");
+    }
 });
 console.log(user1, user2, user3);
