@@ -22,8 +22,8 @@ var myItem = localStorage.getItem(userName);
 var user1 = new registar(userName, userPass);
 var user2 = new registar(userName2, userPass2);
 var user3 = new registar(userName3, userPass3);
-function bullShitticusMaximus(param) {
-}
+//let bullShitticusMaximus = [user1, user2, user3];
+//export default bullShitticusMaximus;
 //#region 
 // function start() {
 //     let param1 = userNameSent;

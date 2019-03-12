@@ -34,11 +34,8 @@ let user1 = new registar(userName, userPass);
 let user2 = new registar(userName2, userPass2);
 let user3 = new registar(userName3, userPass3);
 
-
-
-function bullShitticusMaximus (param: any){
-    
-}
+//let bullShitticusMaximus = [user1, user2, user3];
+//export default bullShitticusMaximus;
 
 //#region 
 // function start() {
