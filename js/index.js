@@ -6,6 +6,9 @@ var registar = /** @class */ (function () {
     }
     return registar;
 }());
+function toRegPageX() {
+    location.replace("./additionalAnnoyance/registrationForm.html"); // podeseno ok
+}
 var userName = 'Marko';
 localStorage.setItem(userName, userName);
 var userPass = 'MarkoPass';
@@ -29,7 +32,7 @@ for (; sKey = window.localStorage.key(i); i++) {
         var x = window.localStorage.getItem(sKey); // how to get every second value
         //console.log(x + " " + "this is from the first condition");
     }
-    else {
+    else if (i % 2 == 1) {
         var y = window.localStorage.getItem(sKey);
         //console.log(y + " " + "this if from the second condition");
     }
@@ -83,7 +86,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
         }
     }
     if (xCheck > 0) {
-        alert("Korisnicko ime nije pronadjeno u local storage da li zelite da se registrujete");
+        alert("Korisnicko Ime nije pronadjeno, forgot your password ?");
     }
     //#region 
     // let x1 = [user1, user2, user3], string;
@@ -118,5 +121,8 @@ document.getElementById("loginButton").addEventListener("click", function () {
     //     console.log("ok it works 3");
     // }
     //#endregion
+});
+document.getElementById("text").addEventListener("click", function () {
+    toRegPageX();
 });
 // console.log(user1, user2, user3);
