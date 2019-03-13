@@ -9,6 +9,9 @@ var registar = /** @class */ (function () {
 function toRegPageX() {
     location.replace("./additionalAnnoyance/registrationForm.html"); // podeseno ok
 }
+function loggedInPage() {
+    location.replace("./additionalAnnoyance/loggedInPage.html"); // podeseno ok
+}
 var userName = 'Marko';
 localStorage.setItem(userName, userName);
 var userPass = 'MarkoPass';
@@ -82,6 +85,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
         if (x == userNameSent && y == userPassSent) {
             console.log("excelente it works");
             xCheck = -100;
+            loggedInPage();
             // this works great add the page for sucessufull login now
         }
     }
