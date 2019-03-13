@@ -10,6 +10,10 @@ class registar {
     }
 }
 
+function toRegPageX() {
+    location.replace("./additionalAnnoyance/registrationForm.html")  // podeseno ok
+}
+
 let userName = 'Marko';
 localStorage.setItem(userName, userName);
 
@@ -43,7 +47,7 @@ for (; sKey = window.localStorage.key(i); i++) {
     if (i % 2 == 0) { // even values for i
         var x = window.localStorage.getItem(sKey);  // how to get every second value
         //console.log(x + " " + "this is from the first condition");
-    } else {
+    } else if(i % 2 == 1) {
         var y = window.localStorage.getItem(sKey);
         //console.log(y + " " + "this if from the second condition");
     }
@@ -113,7 +117,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
     }
 
     if(xCheck > 0){
-        alert("Korisnicko ime nije pronadjeno u local storage da li zelite da se registrujete")
+        alert("Korisnicko Ime nije pronadjeno, forgot your password ?");
     }
 
     //#region 
@@ -155,5 +159,8 @@ document.getElementById("loginButton").addEventListener("click", function () {
 
 });
 
+document.getElementById("text").addEventListener("click", function () {
+    toRegPageX();
+});
 
 // console.log(user1, user2, user3);
