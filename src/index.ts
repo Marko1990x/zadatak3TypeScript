@@ -11,8 +11,13 @@ class registar {
 }
 
 function toRegPageX() {
-    location.replace("./additionalAnnoyance/registrationForm.html")  // podeseno ok
+    location.replace("./additionalAnnoyance/registrationForm.html");  // podeseno ok
 }
+
+function loggedInPage() {
+    location.replace("./additionalAnnoyance/loggedInPage.html"); // podeseno ok
+}
+
 
 let userName = 'Marko';
 localStorage.setItem(userName, userName);
@@ -112,6 +117,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
         if(x == userNameSent && y == userPassSent){
             console.log("excelente it works");
             xCheck = -100;
+            loggedInPage();
             // this works great add the page for sucessufull login now
         }
     }

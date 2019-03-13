@@ -81,5 +81,11 @@
 #wrapperX #wrapper3 .firstButton {
   margin-left: 30%;
 }
+#wrapperX #wrapper3 #backButton {
+  color: red;
+  width: 50px;
+  margin-left: 5%;
+  margin-bottom: -15px;
+}
 
 /*# sourceMappingURL=logged.css.map */
